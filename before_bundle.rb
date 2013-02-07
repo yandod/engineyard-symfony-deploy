@@ -2,6 +2,11 @@
 run "cp #{release_path}/app/config/parameters.yml.example #{release_path}/app/config/parameters.yml"
 run "ln -s #{release_path}/web/app.php #{release_path}/web/index.php"
 
+# set timezon in php.ini
+run "echo 'date.timezone = Asia/Tokyo' > /etc/php/cli-php5.3/ext-active/timezone.ini"
+run "echo 'date.timezone = Asia/Tokyo' > /etc/php/cli-php5.3/ext-active/timezone.ini"
+run "echo 'date.timezone = Asia/Tokyo' > /etc/php/cli-php5.3/ext-active/timezone.ini"
+
 # kick composer install
 run "curl -s https://getcomposer.org/installer | php -d allow_url_fopen=on"
 run "php -d allow_url_fopen=on composer.phar install"
