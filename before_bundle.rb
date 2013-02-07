@@ -12,5 +12,5 @@ run "curl -s https://getcomposer.org/installer | php -d allow_url_fopen=on"
 run "php -d allow_url_fopen=on composer.phar install"
 
 # change nginx document root for Symfony
-run 'sed  -e \'s/root \/data\/symfony_app\/current/root \/data\/symfony_app\/current\/web/\' /etc/nginx/servers/symfony_app.conf > /etc/nginx/servers/symfony_app.conf.tmp'
+run 'sed  -e \'s/root \/data\/symfony_app\/current;/root \/data\/symfony_app\/current\/web;/\' /etc/nginx/servers/symfony_app.conf > /etc/nginx/servers/symfony_app.conf.tmp'
 run "cp /etc/nginx/servers/symfony_app.conf.tmp /etc/nginx/servers/symfony_app.conf"
